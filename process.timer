@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer for Process Monitor Service
+Requires=process.service
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+AccuracySec=1s
+Persistent=true
+
+[Install]
+WantedBy=timers.target
