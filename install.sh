@@ -10,12 +10,12 @@ fi
 echo "=== Установка Process Monitor ==="
 
 echo "Копирование скрипта мониторинга..."
-cp monitor_process.sh /usr/local/bin/
-chmod +x /usr/local/bin/monitor_process.sh
+cp process.sh /usr/local/bin/
+chmod +x /usr/local/bin/process.sh
 
 echo "Установка systemd юнитов..."
-cp process-monitor.service /etc/systemd/system/
-cp process-monitor.timer /etc/systemd/system/
+cp process.service /etc/systemd/system/
+cp process.timer /etc/systemd/system/
 
 echo "Создание лог-файла..."
 touch /var/log/monitoring.log
@@ -25,12 +25,12 @@ echo "Перезагрузка systemd daemon..."
 systemctl daemon-reload
 
 echo "Включение и запуск таймера..."
-systemctl enable process-monitor.timer
-systemctl start process-monitor.timer
+systemctl enable process.timer
+systemctl start process.timer
 
 echo ""
 echo "=== Статус установки ==="
-systemctl status process-monitor.timer --no-pager
+systemctl status process.timer --no-pager
 
 echo ""
 echo "=== Установка завершена успешно! ==="

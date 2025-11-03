@@ -4,7 +4,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/monitor_process.sh
+ExecStart=/usr/local/bin/process.sh
 StandardOutput=journal
 StandardError=journal
 User=root
